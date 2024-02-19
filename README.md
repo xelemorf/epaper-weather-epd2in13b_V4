@@ -76,8 +76,6 @@ sudo systemctl start epaper-weather
 
 ## Related projects
 
-Relevant projects:
-
 - [epaper-weather](https://github.com/nerstak/epaper-weather): This project was forked from this
 - [inkyWeather](https://github.com/xenOs76/inkyWeather): a similar project with Inky pHAT. I borrowed some graphical
   parts to speed up the development process
