@@ -4,8 +4,8 @@
 
 ![showcase](https://github.com/xelemorf/epaper-weather-epd2in13b_V4/assets/979681/0ba047d8-bf32-45f6-825e-cebcf3c97c2e)
 
-A program to display weather and other useless information you could get by looking at the window :)
-This is based on Nerstak's project, I just added a Black-White-Red (epd2in13b_V4) display option and removed the DHT22 sensor requirement
+A program to display weather and other useless information you could get by looking at the window.
+This is based on Nerstak's project, I just added a Black-White-Red (epd2in13b_V4) display option and removed the DHT22 sensor requirement.
 Please find Nerstak's project here: https://github.com/nerstak/epaper-weather
 
 ### Technologies used
@@ -18,7 +18,7 @@ Software:
 Hardware (you are not required to use the exact same one, but you'll need to adapt the program):
 
 - Raspberry Pi 3A+, Raspberry Pi 2 Zero WH (Recommended), Raspberry Pi 4B
-- Waveshare epd2in13b_V4: https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT_(B)_Manual (you can find it on AliExpress)
+- Waveshare epd2in13b_V4: [lib]https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT_(B)_Manual (you can find it on AliExpress)
 
 Minimal hardware requirements:
 
