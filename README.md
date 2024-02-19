@@ -6,7 +6,8 @@
 
 A program to display weather and other useless information you could get by looking at the window.
 This is based on Nerstak's project, I modified it to epd2in13b_V4 Black-White-Red display using black colors only for now and removed the DHT22 sensor requirement.
-Please find Nerstak's project here: https://github.com/nerstak/epaper-weather
+
+Please find Nerstak's original project here (from which this was forked): https://github.com/nerstak/epaper-weather
 
 ### Technologies used
 
