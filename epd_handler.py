@@ -1,25 +1,36 @@
+#!/usr/bin/python
+# -*- coding:utf-8 -*-
+
+import sys
 import os
 import time
 
+
 from PIL import Image
 
-from lib.waveshare_epd import epd2in13_V3
+from lib_waveshare_epd import epd2in13b_V4
 
-epd = epd2in13_V3.EPD()
+epd = epd2in13b_V4.EPD()
 
 screenWidth = epd.height
-# screenWidth = 250
+#screenWidth = 250
 screenHeight = epd.width
-# screenHeight = 122
+#screenHeight = 122
 
 def clear_screen():
     """
     Clear the screen
     """
+    #logging.info("Goto Sleep...")
     epd.init()
     epd.Clear()
     time.sleep(2)
     epd.sleep()
+    
+    #logging.info("init and Clear")
+    #epd.init()
+    #epd.Clear(0xFF)
+
 
 
 def draw_image_on_hardware(img: Image):
@@ -28,11 +39,24 @@ def draw_image_on_hardware(img: Image):
     Does not close img
     :param img: Image
     """
-    # img.show()
+    #img.show()
     epd.init()
-    img.save(os.path.join("/tmp", "image.png"))
 
+    #black image
+    img.save(os.path.join("/tmp", "image.png"))
+    
+    #blank redimage
+    redimage = Image.new('1', (epd.height, epd.width), 255)  # 250*122
+
+    #black image file
     screen_output_file = Image.open(os.path.join("/tmp", "image.png"))
-    epd.display(epd.getbuffer(screen_output_file))
+    #epd.display(epd.getbuffer(screen_output_file))
+
+    #first draw makes black image, second draw overlays red image (must to draw twice on BWR display), drawing the same image twice will result a red image
+    epd.display(epd.getbuffer(screen_output_file), epd.getbuffer(redimage))
+
+    #logging.info("Goto Sleep...")
     time.sleep(2)
     epd.sleep()
+
+

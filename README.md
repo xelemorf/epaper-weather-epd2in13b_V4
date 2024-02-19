@@ -4,7 +4,9 @@
 
 ![IMG20230505162319-01](https://github.com/nerstak/epaper-weather/assets/33179821/0891a2b7-28ef-4423-9af8-17cc1ae9a916)
 
-A program to display weather and other useless information you could get by looking at the window
+A program to display weather and other useless information you could get by looking at the window :)
+This is based on Nerstak's project, I just added a Black-White-Red (epd2in13b_V4) display option and removed the DHT22 sensor requirement
+Please find Nerstak's project here: https://github.com/nerstak/epaper-weather
 
 ### Technologies used
 
@@ -13,16 +15,10 @@ Software:
 - Python3
 - Waveshare e-paper [lib](https://github.com/waveshare/e-Paper/blob/master/RaspberryPi_JetsonNano/python/lib/)
 
-Additional and optional infrastructure:
-
-- InfluxDB
-- Grafana
-
 Hardware (you are not required to use the exact same one, but you'll need to adapt the program):
 
-- Raspberry Pi 3A+ (I had some lying around)
-- [Waveshare 2.13inch e-paper](https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT_Manual)
-- DHT22 sensor, for humidity and temperature
+- Raspberry Pi 3A+, Raspberry Pi 2 Zero WH (Recommended), Raspberry Pi 4B
+- Waveshare epd2in13b_V4: https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT_(B)_Manual (you can find it on AliExpress)
 
 Minimal hardware requirements:
 
@@ -36,25 +32,10 @@ Minimal hardware requirements:
 - Display current weather (temperature, humidity, rain)
 - Display 24hours forecast
 - Display sunrise and sunset time
-- Display temperature and humidity from sensor (optional)
-- Log data into InfluxDB (optional)
 
 ## Usage
 
 ### Installation
-
-#### InfluxDB
-
-Optionally, install an InfluxDB (1.8 for 32bits RaspberryPi).
-
-You will need to create a Database (no credential used here).
-
-#### Grafana
-
-Optionally, install Grafana.
-
-Follow this [guide](https://grafana.com/tutorials/install-grafana-on-raspberry-pi/) from *Installation* part.
-Add a Datasource, select InfluxDB and put `http://localhost:8086`.
 
 #### OpenWeather
 
@@ -101,8 +82,9 @@ sudo systemctl start epaper-weather
 
 ## Related projects
 
-Some projects that helped me overcome some issues:
+Relevant projects:
 
+- [epaper-weather](https://github.com/nerstak/epaper-weather): This project was forked from this one
 - [inkyWeather](https://github.com/xenOs76/inkyWeather): a similar project with Inky pHAT. I borrowed some graphical
   parts to speed up the development process
 - [E-paper Weather Display](https://github.com/AbnormalDistributions/e_paper_weather_display): a similar project with a

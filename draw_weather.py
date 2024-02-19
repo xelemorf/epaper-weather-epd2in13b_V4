@@ -63,17 +63,16 @@ def _current_date():
     return datetime.now().strftime('%a, %b %d')
 
 
-def draw_image(weather: dict, fcast: dict, temp_and_humidity: (float, float)):
+def draw_image(weather: dict, fcast: dict):
     """
     Draw the whole image to display
     :param weather: Current weather data
     :param fcast: Current forecast data
-    :param temp_and_humidity: (temperature, humidity)
     """
     img = Image.new("L", (screenWidth, screenHeight), 255)
     draw = ImageDraw.Draw(img)
 
-    draw_upper_part(draw, weather, temp_and_humidity)
+    draw_upper_part(draw, weather)
     draw_forecast_boxes(draw, fcast)
     img_rotated = img.transpose(Image.ROTATE_180)
     draw_image_on_hardware(img_rotated)
@@ -127,7 +126,9 @@ def draw_forecast_box(draw: ImageDraw, forecast_data: dict[str, str], box_col: i
     temp_width, temp_height = get_text_size(draw=draw, text=temperature_text, font=fBoxFont)
 
     width_padding = (fBox_wx1 - (ico_width + temp_width)) / 2
-    height_padding = (fBox_hx1 - (hour_height + temp_height)) / 2
+    height_padding = (fBox_hx1 - (hour_height + 
+
+temp_height)) / 2
 
     # Print Weather Icon
     ico_rel_wx0 = box_wx0 + int((width_padding / 2))
@@ -145,36 +146,9 @@ def draw_forecast_box(draw: ImageDraw, forecast_data: dict[str, str], box_col: i
     draw.text((temp_rel_wx0, temp_rel_hx0), temperature_text, fill=black, font=fBoxFont)
 
 
-def draw_local_data(draw: ImageDraw, available_width: int, local_hx0: int, temp_and_humidity: (float, float)):
-    """
-    Draw local data
-    :param draw: ImageDraw
-    :param available_width: Available space
-    :param local_hx0: Position in height
-    :param temp_and_humidity: (temperature, humidity)
-    """
-    padding = 2
-    home_icon = '\uf015'
-    text_temp = str(temp_and_humidity[0]) + "°C"
-    text_hum = str(temp_and_humidity[1]) + "%"
-
-    w_ico, h_ico = get_text_size(draw=draw, text=home_icon, font=sIcoFont)
-    w_temp, h_temp = get_text_size(draw=draw, text=text_temp, font=wDetFont)
-    w_hum, h_hum = get_text_size(draw=draw, text=text_hum, font=wDetFont)
-
-    width_data = padding + w_ico + 2 + max(w_temp, w_hum)
-
-    if available_width >= width_data:
-        home_wx0 = w_wx1 - width_data
-        draw.text(xy=(home_wx0, local_hx0), text=home_icon, font=sIcoFont, fill=black)
-        draw.text(xy=(home_wx0 + 2 + w_ico, local_hx0), text=text_temp, font=wDetFont, fill=black)
-        draw.text(xy=(home_wx0 + 2 + w_ico, local_hx0 + 2 + h_temp), text=text_hum, font=wDetFont, fill=black)
-
-
-def draw_upper_part(draw: ImageDraw, weather: dict, temp_and_humidity: (float, float)):
+def draw_upper_part(draw: ImageDraw, weather: dict):
     """
     Draw current weather info
-    :param temp_and_humidity: (temperature, humidity)
     :param draw: Pillow Draw
     :param weather: Data about weather
     """
@@ -238,10 +212,6 @@ def draw_upper_part(draw: ImageDraw, weather: dict, temp_and_humidity: (float, f
     # Feels Temperature
     # temp_feels_text = " => " + str(math.ceil(temp_feels_text)) + "°C"
     # draw.text((temperature_wx1 + temperature_padding, 1), temp_feels_text, fill=black, font=wTempFont)
-
-    # Local Data
-    available_width = w_wx1 - (temperature_wx0 + temperature_padding)
-    draw_local_data(draw, available_width, 0, temp_and_humidity)
 
     # Sunrise & Sunset
     available_width = w_wx1 - (desc_wx0 + desc_width)

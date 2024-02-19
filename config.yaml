@@ -1,0 +1,13 @@
+API_KEY: 
+units: metric
+coordinates:
+  lat: 47.497913
+  lon: 19.040236
+refresh_period_min:
+  data: 30
+  screen: 1
+city: Budapest
+metrics:
+  record_metrics: false
+  database_url: localhost:8086
+  database_name: pi_db
