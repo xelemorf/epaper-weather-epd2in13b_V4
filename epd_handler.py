@@ -52,7 +52,7 @@ def draw_image_on_hardware(img: Image):
     screen_output_file = Image.open(os.path.join("/tmp", "image.png"))
     #epd.display(epd.getbuffer(screen_output_file))
 
-    #first draw makes black image, second draw overlays red image (must to draw twice on BWR display), drawing the same image twice will result a red image
+    #first draw makes black image, second draw overlays red image (must draw twice on BWR display to avoid redimage errmsg), drawing the same image twice will result a red image
     epd.display(epd.getbuffer(screen_output_file), epd.getbuffer(redimage))
 
     #logging.info("Goto Sleep...")
