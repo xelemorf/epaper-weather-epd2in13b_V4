@@ -74,6 +74,10 @@ sudo systemctl enable epaper-weather
 sudo systemctl start epaper-weather
 ```
 
+#### Tested with
+- `Hardware`: Raspberry Pi 2 Zero WH (Recommended)
+- `OS`: Bullseye x86
+
 ## Related projects
 
 - [epaper-weather](https://github.com/nerstak/epaper-weather): This project was forked from
