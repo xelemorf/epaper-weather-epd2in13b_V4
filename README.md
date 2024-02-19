@@ -2,7 +2,7 @@
 
 ## Description
 
-![IMG20230505162319-01](https://github.com/nerstak/epaper-weather/assets/33179821/0891a2b7-28ef-4423-9af8-17cc1ae9a916)
+![showcase](https://github.com/xelemorf/epaper-weather-epd2in13b_V4/assets/979681/0ba047d8-bf32-45f6-825e-cebcf3c97c2e)
 
 A program to display weather and other useless information you could get by looking at the window :)
 This is based on Nerstak's project, I just added a Black-White-Red (epd2in13b_V4) display option and removed the DHT22 sensor requirement
