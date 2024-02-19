@@ -6,7 +6,7 @@ coordinates:
 refresh_period_min:
   data: 30
   screen: 1
-city: Budapest
+city: Home area
 metrics:
   record_metrics: false
   database_url: localhost:8086
