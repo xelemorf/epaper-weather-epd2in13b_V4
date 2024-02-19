@@ -5,7 +5,7 @@ coordinates:
   lon: 19.040236
 refresh_period_min:
   data: 30
-  screen: 1
+  screen: 10
 city: Home area
 metrics:
   record_metrics: false
