@@ -13,12 +13,12 @@ Please find Nerstak's project here: https://github.com/nerstak/epaper-weather
 Software:
 
 - Python3
-- Waveshare e-paper (https://github.com/waveshare/e-Paper/blob/master/RaspberryPi_JetsonNano/python/lib/)
+- Waveshare epd2in13b_V4 e-paper lib included (Source: https://github.com/waveshare/e-Paper/blob/master/RaspberryPi_JetsonNano/python/lib/)
 
 Hardware (you are not required to use the exact same one, but you'll need to adapt the program):
 
 - Raspberry Pi 3A+, Raspberry Pi 2 Zero WH (Recommended), Raspberry Pi 4B
-- Waveshare epd2in13b_V4: [lib]https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT_(B)_Manual (you can find it on AliExpress)
+- Waveshare epd2in13b_V4 display: https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT_(B)_Manual (you can find it on AliExpress)
 
 ### Features
 
