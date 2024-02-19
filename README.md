@@ -1,4 +1,4 @@
-# ePaper-Weather
+# ePaper-Weather-epd2in13b_V4
 
 ## Description
 
@@ -13,19 +13,12 @@ Please find Nerstak's project here: https://github.com/nerstak/epaper-weather
 Software:
 
 - Python3
-- Waveshare e-paper [lib](https://github.com/waveshare/e-Paper/blob/master/RaspberryPi_JetsonNano/python/lib/)
+- Waveshare e-paper (https://github.com/waveshare/e-Paper/blob/master/RaspberryPi_JetsonNano/python/lib/)
 
 Hardware (you are not required to use the exact same one, but you'll need to adapt the program):
 
 - Raspberry Pi 3A+, Raspberry Pi 2 Zero WH (Recommended), Raspberry Pi 4B
 - Waveshare epd2in13b_V4: [lib]https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT_(B)_Manual (you can find it on AliExpress)
-
-Minimal hardware requirements:
-
-- Microcontroller with:
-    - GPIO
-    - Ability to connect to Internet
-- Whatever e-paper screen (may require some adaptations)
 
 ### Features
 
@@ -84,7 +77,7 @@ sudo systemctl start epaper-weather
 
 Relevant projects:
 
-- [epaper-weather](https://github.com/nerstak/epaper-weather): This project was forked from this one
+- [epaper-weather](https://github.com/nerstak/epaper-weather): This project was forked from this
 - [inkyWeather](https://github.com/xenOs76/inkyWeather): a similar project with Inky pHAT. I borrowed some graphical
   parts to speed up the development process
 - [E-paper Weather Display](https://github.com/AbnormalDistributions/e_paper_weather_display): a similar project with a
