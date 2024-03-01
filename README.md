@@ -76,7 +76,7 @@ sudo systemctl start epaper-weather
 
 #### Tested with
 - `Hardware`: Raspberry Pi 2 Zero WH (Recommended)
-- `OS`: Bullseye x86
+- `OS`: Raspbian GNU/Linux 11 (bullseye) x86; Raspbian GNU/Linux 12 (bookworm) x86
 
 ## Related projects
 
